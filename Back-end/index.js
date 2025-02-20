@@ -24,13 +24,15 @@ mongoose
     console.error(chalk.red("✗ Erreur de connexion à MongoDB:", err));
   });
 
-// Routes de base
-app.get("/", (req, res) => {
-  res.json({ message: "API is running" });
-});
+// // Routes de base
+// app.get("/", (req, res) => {
+//   res.json({ message: "API is running" });
+// });
 
-//routes de nos api
-app.use("/api/users", userRoutes);
+// //routes de nos api
+// app.use("/api/users", userRoutes);
+
+app.use(userRoutes)
 
 // Démarrage du serveur
 app.listen(port, () => {
