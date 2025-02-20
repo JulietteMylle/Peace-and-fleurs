@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 
 const fleurSchema = new mongoose.Schema(
   {
-    ObjectId: {
-      type: String,
-      required: true,
-    },
     description: {
       type: String,
       required: true,
@@ -15,7 +11,7 @@ const fleurSchema = new mongoose.Schema(
       required: true,
     },
     prix: {
-      type: Number,
+      type: String,
       required: true,
     },
     couleur: {
@@ -35,4 +31,6 @@ const fleurSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Fleur", fleurSchema);
+const Fleur = mongoose.model("Fleur", fleurSchema, "flowers")
+
+export default Fleur;
