@@ -1,0 +1,41 @@
+/* Style du Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Style du logo (nom du site) */
+  .header .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+  }
+  
+  /* Conteneur des boutons */
+  .header .button-container {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Style des boutons */
+  .header .button-container button {
+    padding: 10px 15px;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .header .button-container button:hover {
+    background-color: #000;
+    color:#fff;
+    border-color: #fff;
+  }
+  
