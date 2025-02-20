@@ -9,8 +9,15 @@ const DetailById = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fleursApi.getFlowerById(id).then((data) => setFlowerId(data));
+        fleursApi.getFlowerById(id)
+            .then((response) => {
+                console.log(response.data); 
+                setFlowerId(response.data);
+            })
+            .catch((err) => console.error("Erreur de récupération de la fleur:", err));
     }, [id]);
+    
+    
 
     const handleClick = () => {
         fleursApi.deleteFlower(id).then(() => navigate("/"));
@@ -21,7 +28,7 @@ const DetailById = () => {
         <>
         <h1>{flowerId.nom}</h1>
         <p>{flowerId.type}</p>
-        <img src={`/images/${flowerId.image}`} alt={flowerId.name} />
+        <img src={`/images/${flowerId.image}`} />
         <p>{flowerId.couleur}</p>
         <p>{flowerId.prix}</p>
         <p>{flowerId.saisonFloraison}</p>
@@ -32,3 +39,5 @@ const DetailById = () => {
     )
 
 }
+
+export default DetailById
