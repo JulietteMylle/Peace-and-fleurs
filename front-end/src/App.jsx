@@ -1,7 +1,7 @@
 
 
 import "./App.css";
-import RoutesPosts from "./Router/RoutesPosts";
+import RoutesPosts from "./Router/Routes.jsx";
 
 function App() {
   return (
