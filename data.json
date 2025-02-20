@@ -1,0 +1,223 @@
+[
+    {
+      "nom": "Rose",
+      "type": "Rosier",
+      "image": "rose_rouge.jpg",
+      "couleur": "Rouge",
+      "prix": "10€",
+      "saisonFloraison": "Printemps - Été",
+      "imageUne": "rose_rouge_1.jpg",
+      "imageDeux": "rose_rouge_2.jpg",
+      "description": "Symbole de l'amour et de la passion."
+    },
+    {
+      "nom": "Tulipe",
+      "type": "Tulipier",
+      "image": "tulipe_rose.jpg",
+      "couleur": "Rose",
+      "prix": "8€",
+      "saisonFloraison": "Printemps",
+      "imageUne": "tulipe_rose_1.jpg",
+      "imageDeux": "tulipe_rose_2.jpg",
+      "description": "Symbole de la beauté et de l'élégance."
+    },
+    {
+      "nom": "Lys",
+      "type": "Lysier",
+      "image": "lys_blanc.jpg",
+      "couleur": "Blanc",
+      "prix": "12€",
+      "saisonFloraison": "Printemps - Été",
+      "imageUne": "lys_blanc_1.jpg",
+      "imageDeux": "lys_blanc_2.jpg",
+      "description": "Symbole de pureté et de noblesse."
+    },
+    {
+      "nom": "Violette",
+      "type": "Viola",
+      "image": "violette.jpg",
+      "couleur": "Violet",
+      "prix": "5€",
+      "saisonFloraison": "Hiver - Printemps",
+      "imageUne": "violette_1.jpg",
+      "imageDeux": "violette_2.jpg",
+      "description": "Symbole de modestie et de loyauté."
+    },
+    {
+      "nom": "Marguerite",
+      "type": "Bellis",
+      "image": "marguerite.jpg",
+      "couleur": "Blanc",
+      "prix": "7€",
+      "saisonFloraison": "Printemps - Été",
+      "imageUne": "marguerite_1.jpg",
+      "imageDeux": "marguerite_2.jpg",
+      "description": "Symbole de l'innocence et de la pureté."
+    },
+    {
+      "nom": "Orchidée",
+      "type": "Orchidaceae",
+      "image": "orchidee.jpg",
+      "couleur": "Violet",
+      "prix": "15€",
+      "saisonFloraison": "Hiver - Printemps",
+      "imageUne": "orchidee_1.jpg",
+      "imageDeux": "orchidee_2.jpg",
+      "description": "Symbole de beauté exotique et de luxe."
+    },
+    {
+      "nom": "Tulipe",
+      "type": "Tulipier",
+      "image": "tulipe_jaune.jpg",
+      "couleur": "Jaune",
+      "prix": "9€",
+      "saisonFloraison": "Printemps",
+      "imageUne": "tulipe_jaune_1.jpg",
+      "imageDeux": "tulipe_jaune_2.jpg",
+      "description": "Symbole de l'amitié et du bonheur."
+    },
+    {
+      "nom": "Pivoine",
+      "type": "Paeoniaceae",
+      "image": "pivoine.jpg",
+      "couleur": "Rose",
+      "prix": "14€",
+      "saisonFloraison": "Printemps",
+      "imageUne": "pivoine_1.jpg",
+      "imageDeux": "pivoine_2.jpg",
+      "description": "Symbole de richesse et de prospérité."
+    },
+    {
+      "nom": "Chrysanthème",
+      "type": "Chrysanthemum",
+      "image": "chrysanthème.jpg",
+      "couleur": "Jaune",
+      "prix": "6€",
+      "saisonFloraison": "Automne",
+      "imageUne": "chrysanthème_1.jpg",
+      "imageDeux": "chrysanthème_2.jpg",
+      "description": "Symbole de la longévité et de l'amour éternel."
+    },
+    {
+      "nom": "Tournesol",
+      "type": "Helianthus",
+      "image": "tournesol.jpg",
+      "couleur": "Jaune",
+      "prix": "5€",
+      "saisonFloraison": "Été",
+      "imageUne": "tournesol_1.jpg",
+      "imageDeux": "tournesol_2.jpg",
+      "description": "Symbole de la joie et de l'optimisme."
+    },
+    {
+      "nom": "Jasmin",
+      "type": "Jasminum",
+      "image": "jasmin.jpg",
+      "couleur": "Blanc",
+      "prix": "11€",
+      "saisonFloraison": "Été",
+      "imageUne": "jasmin_1.jpg",
+      "imageDeux": "jasmin_2.jpg",
+      "description": "Symbole de l'amour secret et de la grâce."
+    },
+    {
+      "nom": "Anémone",
+      "type": "Anemone",
+      "image": "anemone.jpg",
+      "couleur": "Bleu",
+      "prix": "10€",
+      "saisonFloraison": "Printemps",
+      "imageUne": "anemone_1.jpg",
+      "imageDeux": "anemone_2.jpg",
+      "description": "Symbole de l'anticipation et de la protection."
+    },
+    {
+      "nom": "Lavande",
+      "type": "Lavandula",
+      "image": "lavande.jpg",
+      "couleur": "Violet",
+      "prix": "12€",
+      "saisonFloraison": "Été",
+      "imageUne": "lavande_1.jpg",
+      "imageDeux": "lavande_2.jpg",
+      "description": "Symbole de sérénité et de calme."
+    },
+    {
+      "nom": "Camélia",
+      "type": "Camellia",
+      "image": "camelia.jpg",
+      "couleur": "Rouge",
+      "prix": "20€",
+      "saisonFloraison": "Hiver - Printemps",
+      "imageUne": "camelia_1.jpg",
+      "imageDeux": "camelia_2.jpg",
+      "description": "Symbole de la beauté et du raffinement."
+    },
+    {
+      "nom": "Freesia",
+      "type": "Freesia",
+      "image": "freesia.jpg",
+      "couleur": "Blanc",
+      "prix": "9€",
+      "saisonFloraison": "Printemps",
+      "imageUne": "freesia_1.jpg",
+      "imageDeux": "freesia_2.jpg",
+      "description": "Symbole de l'innocence et de la pureté."
+    },
+    {
+      "nom": "Dahlia",
+      "type": "Dahlia",
+      "image": "dahlia.jpg",
+      "couleur": "Rouge",
+      "prix": "13€",
+      "saisonFloraison": "Été - Automne",
+      "imageUne": "dahlia_1.jpg",
+      "imageDeux": "dahlia_2.jpg",
+      "description": "Symbole de la dignité et de l'élégance."
+    },
+    {
+      "nom": "Iris",
+      "type": "Iris",
+      "image": "iris.jpg",
+      "couleur": "Bleu",
+      "prix": "14€",
+      "saisonFloraison": "Printemps",
+      "imageUne": "iris_1.jpg",
+      "imageDeux": "iris_2.jpg",
+      "description": "Symbole de sagesse et de foi."
+    },
+    {
+      "nom": "Hibiscus",
+      "type": "Hibiscus",
+      "image": "hibiscus.jpg",
+      "couleur": "Rouge",
+      "prix": "18€",
+      "saisonFloraison": "Été",
+      "imageUne": "hibiscus_1.jpg",
+      "imageDeux": "hibiscus_2.jpg",
+      "description": "Symbole de la beauté et de la passion."
+    },
+    {
+      "nom": "Mimosa",
+      "type": "Mimosaceae",
+      "image": "mimosa.jpg",
+      "couleur": "Jaune",
+      "prix": "7€",
+      "saisonFloraison": "Hiver - Printemps",
+      "imageUne": "mimosa_1.jpg",
+      "imageDeux": "mimosa_2.jpg",
+      "description": "Symbole de la sensibilité et de la féminité."
+    },
+    {
+      "nom": "Glaïeul",
+      "type": "Gladiolus",
+      "image": "glaïeul.jpg",
+      "couleur": "Rouge",
+      "prix": "10€",
+      "saisonFloraison": "Été",
+      "imageUne": "glaïeul_1.jpg",
+      "imageDeux": "glaïeul_2.jpg",
+      "description": "Symbole de force et de caractère."
+    }
+  ]
+  
