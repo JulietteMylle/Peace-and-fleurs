@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import fleursApi from "../../services/fleursApi";
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
-import styles from "./Ajouter.module.css"; // Importation du module CSS
-
+import styles from "../Ajouter/Ajouter.module.css"; // Importation du module CSS
+import { useCallback, useEffect } from "react"; // Import de useCallback
 // Définition du schéma de validation
 const schema = yup
   .object({
@@ -14,32 +14,58 @@ const schema = yup
     couleur: yup.string().required("La couleur est obligatoire"),
     prix: yup.string().required("Le prix est obligatoire"),
     saisonFloraison: yup.string().required("La saison est obligatoire"),
-    imageUne: yup.string().required("Veuillez mettre le nom exact de votre image"),
-    imageDeux: yup.string().required("Veuillez mettre le nom exact de votre image"),
     description: yup.string().required("La description est obligatoire"),
   })
   .required();
 
-const AddFlower = () => {
+const UpdateFlower = () => {
+  const { id } = useParams(); // Récupère l'ID de la fleur à partir de l'URL
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({ resolver: yupResolver(schema) });
+
   const navigate = useNavigate();
 
   // Fonction qui gère la soumission du formulaire
   const onSubmit = (data) => {
-    console.log("Données soumises ", data);
+    console.log("Données soumises pour mise à jour", data);
     fleursApi
-      .addFlower(data)
+      .updateFlower(id, data) // Passer l'id pour la mise à jour
       .then(() => navigate("/"))
       .catch((error) => console.error("Erreur", error));
   };
 
+  // Fonction pour pré-remplir le formulaire avec les données de la fleur
+// Fonction pour pré-remplir le formulaire avec les données de la fleur
+const fetchFlower = useCallback(async () => {
+    try {
+      const response = await fleursApi.getFlowerById(id);
+      const flower = response.data;
+      // Remplir le formulaire avec les données de la fleur existante
+      setValue("nom", flower.nom);
+      setValue("type", flower.type);
+      setValue("image", flower.image);
+      setValue("couleur", flower.couleur);
+      setValue("prix", flower.prix);
+      setValue("saisonFloraison", flower.saisonFloraison);
+      setValue("imageUne", flower.imageUne);
+      setValue("imageDeux", flower.imageDeux);
+      setValue("description", flower.description);
+    } catch (error) {
+      console.error("Erreur lors de la récupération de la fleur", error);
+    }
+  }, [id, setValue]); // Ajoute id et setValue comme dépendances, puisque ce sont des variables externes qui peuvent changer
+  
+  useEffect(() => {
+    fetchFlower();
+  }, [fetchFlower]); // Ici, fetchFlower ne changera que si ses dépendances changent
+
   return (
     <div className={styles.formContainer}>
-      <h1 className={styles.formTitle}>Ajouter une fleur</h1>
+      <h1 className={styles.formTitle}>Mettre à jour la fleur</h1>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         {/* Nom de la fleur */}
         <div className={styles.formGroup}>
@@ -106,11 +132,11 @@ const AddFlower = () => {
 
         {/* Bouton de soumission */}
         <button className={styles.submitButton} type="submit">
-          Ajouter la fleur
+          Mettre à jour la fleur
         </button>
       </form>
     </div>
   );
 };
 
-export default AddFlower;
+export default UpdateFlower;
