@@ -5,12 +5,9 @@ import {
   majFleur,
   getFleursByType,
   updateAllFleurs,
-  addFlower
-} from "../controllers/FleurController.js";
   addFlower,
   deleteFlower
-} 
-from "../controllers/FleurController.js";
+} from "../controllers/FleurController.js";
 
 const router = express.Router();
 
