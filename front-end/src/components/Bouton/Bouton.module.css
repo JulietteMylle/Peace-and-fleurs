@@ -17,5 +17,5 @@
   display: inline-block;
 }
 .btn-grad:hover {
-  transform: scale(1.05); /* Effet d'agrandissement au survol */
+  transform: scale(1.05); 
 }

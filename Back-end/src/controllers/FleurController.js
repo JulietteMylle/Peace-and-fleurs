@@ -1,6 +1,31 @@
 import Fleur from "../models/Fleur.js";
 
 // create - pour Satya
+export const addFlower = async (req, res) => {
+  try {
+      const { type, description, prix, couleur, saisonFloraison, image} = req.body;
+
+      if (!type || !description || !prix  || !couleur || !saisonFloraison || !image) {
+          return res.status(400).json({ message: "Tous les champs doivent être complétés" });
+      }
+
+      const newFlower = new Fleur({
+          type : req.body.type,
+          description : req.body.description,
+          prix : req.body.prix,
+          couleur : req.body.couleur,
+          saisonFloraison : req.body.saisonFloraison,
+          image : req.body.image
+      });
+
+      const fleurAdd = await newFlower.save();
+      res.status(201).json(fleurAdd)
+
+      // res.status(201).json({ message: "La fleur a été ajouté", flower: newFlower });
+  } catch (error) {
+      res.status(500).json({ message: "Une erreur est survenue", error });
+  }
+}
 
 // Read - Obtenir toutes les fleurs
 export const getAllUsers = async (req, res) => {
@@ -104,3 +129,18 @@ export const updateAllFleurs = async (req, res) => {
 };
 
 //Delete - pour Satya
+
+export const deleteFlower = async (req,res) => {
+  try{
+      const fleurSupp = await Fleur.findByIdAndDelete(req.params.id)
+
+      if(!fleurSupp){
+          return res.status(404).json({message: "Fleur non trouvée"})
+      }
+      res.status(204).end()
+
+      res.status(200).json({ message: "Fleur supprimée avec succès" });
+  } catch (error) {
+      res.status(500).json({ message: "Erreur serveur", error });
+  }
+}
