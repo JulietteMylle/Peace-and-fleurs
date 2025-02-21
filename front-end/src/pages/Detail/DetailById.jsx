@@ -3,10 +3,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import fleursApi from "../../services/fleursApi";
 
 
+
+
 const DetailById = () => {
     const [flowerId, setFlowerId] = useState({});
     const { id } = useParams();
     const navigate = useNavigate();
+
 
     useEffect(() => {
         fleursApi.getFlowerById(id)
@@ -28,7 +31,7 @@ const DetailById = () => {
         <>
         <h1>{flowerId.nom}</h1>
         <p>{flowerId.type}</p>
-        <img src={`/images/${flowerId.image}`} />
+        <img src={`/images/${flowerId.image}`} alt={flowerId.nom} />
         <p>{flowerId.couleur}</p>
         <p>{flowerId.prix}</p>
         <p>{flowerId.saisonFloraison}</p>
@@ -39,5 +42,7 @@ const DetailById = () => {
     )
 
 }
+
+
 
 export default DetailById
