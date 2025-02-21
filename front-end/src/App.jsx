@@ -2,7 +2,7 @@
 
 import "./App.css";
 
-import RoutesPosts from "./Router/RoutesPosts.jsx";
+import RoutesPosts from "./Router/Routes.jsx";
 import 'font-awesome/css/font-awesome.min.css';
 
 

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import fleursApi from "../../services/fleursApi";
 import Bouton from "../../components/Bouton/Boutons";
+import Header from "../Header.jsx";
+import Footer from "../Footer.jsx";
+import styles from "../Detail/Detail.module.css"
 
 
 
@@ -30,18 +33,27 @@ const DetailById = () => {
 
     return(
         <>
-        <h1>{flowerId.nom}</h1>
-        <p>{flowerId.type}</p>
-        <img src={`/images/${flowerId.image}`} alt={flowerId.nom} />
-        <p>{flowerId.couleur}</p>
-        <p>{flowerId.prix}</p>
-        <p>{flowerId.saisonFloraison}</p>
-        <img src={`/images/${flowerId.imageUne}`} alt={flowerId.nom} />
-        <img src={`/images/${flowerId.imageDeux}`} alt={flowerId.nom} />
-        <p>{flowerId.description}</p>
-        <Bouton label="Supprimer cette fleur" />
-        <Bouton label="Modifier cette fleur"  />
+        <Header />
+        <h1 className={styles.titre}>{flowerId.nom}</h1>
+        <p className={styles.sousTitre}>{flowerId.type}</p>
+        <img className={styles.imagePrincipale} src={`/images/${flowerId.image}`} alt={flowerId.nom} />
+        <div >
+            <p className={styles.flowerDetails}>Couleur : {flowerId.couleur}</p>
+            <p className={styles.flowerDetails}>Prix : {flowerId.prix}</p>
+            <p className={styles.flowerDetails}>Saison de floraison : {flowerId.saisonFloraison}</p>
+            <Bouton  label="Ajouter au panier" />
+        </div>
 
+        <div className={styles.flowerImages}>
+            <img src={`/images/${flowerId.imageUne}`} alt={flowerId.nom} />
+            <img src={`/images/${flowerId.imageDeux}`} alt={flowerId.nom} />
+        </div>
+        <p className={styles.flowerDescription}>{flowerId.description}</p>
+        <div className={styles.boutonsContainer}>s
+             <Bouton  label="Supprimer cette fleur" />
+             <Bouton  label="Modifier cette fleur" />
+        </div>
+        <Footer />
         </>
     )
 

@@ -1,0 +1,91 @@
+.titre {
+    text-align: left;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2.5rem; 
+    font-weight: 600; 
+    color: #111;
+    letter-spacing: 0.1em;
+    text-transform: uppercase; 
+    line-height: 1.4; 
+    padding-bottom: 10px; 
+    margin-bottom: 30px; 
+    letter-spacing: 0.05em;
+ }
+.sousTitre {
+    text-align: left;
+    font-family: 'Arial', sans-serif; 
+    font-weight: 300; 
+    color: #333;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 5px;
+    margin-bottom: 20px; 
+ }
+
+ .imagePrincipale {
+    width: 100%; 
+    height: auto; 
+    max-height: 900px; 
+    object-fit: cover; 
+    object-position: top;
+    display: block; 
+ }
+ .flowerDetails {
+    text-align: left;
+    font-family: 'Poppins', sans-serif;  /* Choisir une police plus moderne */
+    font-weight: 300;
+    color: #555;  /* Couleur plus douce que #333 */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    
+    padding-bottom: 8px; 
+    margin-bottom: 25px; 
+    transition: all 0.3s ease;  
+}
+
+.flowerDetails:hover {
+    color: #000;  
+    border-bottom: 2px solid; 
+    border-color: #000; 
+    transform: translateX(5px); 
+}
+.flowerImages {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;  /* Plus d'espace sous les images */
+}
+
+.flowerImages img {
+    width: 48%;  /* Les images prennent environ la moitié de la largeur du container */
+    height: auto;
+    border-radius: 12px;  /* Coins arrondis pour les images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombre subtile pour donner de la profondeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Animation fluide au survol */
+}
+
+.flowerImages img:hover {
+    transform: scale(1.05);  /* Légère augmentation de la taille au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Ombre plus marquée au survol */
+}
+
+.flowerDescription {
+    text-align: center;
+    font-family: 'Arial', sans-serif; 
+    font-weight: 300; 
+    color: #333;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    margin-bottom: 20px; 
+}
+.boutonsContainer {
+    display: flex !important;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
