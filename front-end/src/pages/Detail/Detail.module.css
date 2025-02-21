@@ -33,9 +33,9 @@
  }
  .flowerDetails {
     text-align: left;
-    font-family: 'Poppins', sans-serif;  /* Choisir une police plus moderne */
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    color: #555;  /* Couleur plus douce que #333 */
+    color: #555; 
     letter-spacing: 0.1em;
     text-transform: uppercase;
     

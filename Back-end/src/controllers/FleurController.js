@@ -199,7 +199,6 @@ export const searchFlowers = async (req, res) => {
   }
 };
 
-}
 
 
 

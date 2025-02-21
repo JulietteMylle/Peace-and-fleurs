@@ -1,55 +1,70 @@
 .homepage {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .flowerList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .flowerCard {
-    border: 1px solid #ddd;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-  }
-  
-  .flowerCard img {
-    width: 100%;
-    height: auto;
-  }
-  
-  button {
-    padding: 10px;
+  text-align: center;
+  padding: 20px;
+}
 
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
+.flowerList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-  .searchContainer {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  .searchInput {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    outline: none;
-  }
-  
-  .searchInput:focus {
-    border-color: #333;
-  }
+.flowerCard {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.flowerCard img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  padding: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.searchContainer {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px; 
+  align-items: center; 
+}
+
+.searchInput {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  border-color: #333;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  background-color: #4CAF50; 
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc; 
+}
+
+.searchButton:hover {
+  background-color: #45a049;
+}
