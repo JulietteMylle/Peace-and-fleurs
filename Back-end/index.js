@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import chalk from "chalk";
 import mongoose from "mongoose";
+import cors from "cors";
 import userRoutes from "./src/routes/FleursRoutes.js";
 
 // On configure les variables d'environnement
@@ -10,7 +11,7 @@ dotenv.config();
 // On Initialise l'application Express
 const app = express();
 const port = process.env.PORT || 3000;
-
+app.use(cors());
 // Middleware pour parser le JSON
 app.use(express.json());
 
@@ -24,13 +25,15 @@ mongoose
     console.error(chalk.red("✗ Erreur de connexion à MongoDB:", err));
   });
 
-// Routes de base
-app.get("/", (req, res) => {
-  res.json({ message: "API is running" });
-});
+// // Routes de base
+// app.get("/", (req, res) => {
+//   res.json({ message: "API is running" });
+// });
 
-//routes de nos api
-app.use("/api/users", userRoutes);
+// //routes de nos api
+// app.use("/api/users", userRoutes);
+
+app.use(userRoutes)
 
 // Démarrage du serveur
 app.listen(port, () => {

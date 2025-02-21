@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
-import PostsApi from "../../service/postapi";
+import fleurApi from "../services/fleursApi";
 
 
 const Accueil = () => {
