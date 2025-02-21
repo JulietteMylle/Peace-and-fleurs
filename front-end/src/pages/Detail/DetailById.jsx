@@ -26,8 +26,8 @@ const DetailById = () => {
     
     
 
-    const handleClick = () => {
-        fleursApi.deleteFlower(id).then(() => navigate("/"));
+    const handleEditClick = () => {
+        navigate(`/update/${id}`)
     };
 
 
@@ -51,7 +51,7 @@ const DetailById = () => {
         <p className={styles.flowerDescription}>{flowerId.description}</p>
         <div className={styles.boutonsContainer}>s
              <Bouton  label="Supprimer cette fleur" />
-             <Bouton  label="Modifier cette fleur" />
+             <Bouton  label="Modifier cette fleur" onClick={handleEditClick} />
         </div>
         <Footer />
         </>
