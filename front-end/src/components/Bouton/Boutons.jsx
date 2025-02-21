@@ -1,7 +1,9 @@
+import styles from "../Bouton/Bouton.module.css"
+
 const Bouton = ({ onClick, label}) => {
     return (
-        <div id='hover_button' className="buttonBox">
-            <button onClick={onClick}>{label}</button>
+        <div >
+            <button className={styles["btn-grad"]} onClick={onClick}>{label}</button>
         </div>
     )
 }

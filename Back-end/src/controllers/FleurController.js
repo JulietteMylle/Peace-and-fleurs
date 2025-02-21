@@ -1,6 +1,32 @@
-import Fleur from "../models/Fleur.js";
+import { Fleur, fleurValidation } from "../models/Fleur.js";
 
 // create - pour Satya
+export const addFlower = async (req, res) => {
+  try {
+      const {nom ,type, description, prix, couleur, saisonFloraison, image} = req.body;
+
+      if (!type || !description || !prix  || !couleur || !saisonFloraison || !image || !nom) {
+          return res.status(400).json({ message: "Tous les champs doivent être complétés" });
+      }
+
+      const newFlower = new Fleur({
+         nom : req.body.nom,
+          type : req.body.type,
+          description : req.body.description,
+          prix : req.body.prix,
+          couleur : req.body.couleur,
+          saisonFloraison : req.body.saisonFloraison,
+          image : req.body.image
+      });
+
+      const fleurAdd = await newFlower.save();
+      res.status(201).json(fleurAdd)
+
+      // res.status(201).json({ message: "La fleur a été ajouté", flower: newFlower });
+  } catch (error) {
+      res.status(500).json({ message: "Une erreur est survenue", error });
+  }
+}
 
 // Read - Obtenir toutes les fleurs
 export const getAllUsers = async (req, res) => {
@@ -52,31 +78,45 @@ export const getFleursByType = async (req, res) => {
   }
 };
 
-// Update - pour mettre à jour une fleur
-export const updateUser = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const updatedFleur = await Fleur.findByIdAndUpdate(id, req.body, {
-      new: true,
-      runValidators: true,
-    });
 
-    if (!updatedFleur) {
-      return res.status(404).json({
-        success: false,
-        message: "Fleur non trouvée",
-      });
+export const majFleur = async (req, res) => {
+  try {
+    // Valider les données avec ton schéma de validation (par exemple, avec Joi, si tu en utilises un)
+    const { error, value } = fleurValidation.validate(req.body); 
+    if (error) {
+      return res.status(400).json({ message: error.details[0].message });
+    }
+    console.log(req.body)
+
+    // Mettre à jour la fleur avec les données envoyées dans la requête
+    const fleurMaj = await Fleur.findByIdAndUpdate(req.params.id, {
+      nom: req.body.nom,
+      type: req.body.type,
+      image: req.body.image,
+      couleur: req.body.couleur,
+      prix: req.body.prix,
+      saisonFloraison: req.body.saisonFloraison,
+      image: req.body.image,
+
+      description: req.body.description
+    }, { new: true, runValidators: true });
+
+    // Vérifier si la fleur existe et si elle a été mise à jour
+    if (!fleurMaj) {
+      return res.status(404).json({ message: "Fleur non trouvée" });
     }
 
+    // Retourner la fleur mise à jour
     res.status(200).json({
       success: true,
-      data: updatedFleur,
-      message: "Fleur mise à jour avec succès",
+      data: fleurMaj,
+      message: "Fleur mise à jour avec succès"
     });
   } catch (error) {
-    res.status(400).json({
+    console.error(error);
+    res.status(500).json({
       success: false,
-      message: error.message,
+      message: "Une erreur est survenue lors de la mise à jour de la fleur"
     });
   }
 };
@@ -104,3 +144,18 @@ export const updateAllFleurs = async (req, res) => {
 };
 
 //Delete - pour Satya
+
+export const deleteFlower = async (req,res) => {
+  try{
+      const fleurSupp = await Fleur.findByIdAndDelete(req.params.id)
+
+      if(!fleurSupp){
+          return res.status(404).json({message: "Fleur non trouvée"})
+      }
+      res.status(204).end()
+
+      res.status(200).json({ message: "Fleur supprimée avec succès" });
+  } catch (error) {
+      res.status(500).json({ message: "Erreur serveur", error });
+  }
+}

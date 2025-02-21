@@ -1,0 +1,21 @@
+
+.btn-grad {
+
+  color: aliceblue;
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  margin: 10px 0;
+  display: inline-block;
+}
+.btn-grad:hover {
+  transform: scale(1.05); 
+}
