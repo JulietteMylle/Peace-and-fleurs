@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import fleursApi from "../../services/fleursApi";
+import Bouton from "../../components/Bouton/Boutons";
 
 
 
@@ -35,9 +36,12 @@ const DetailById = () => {
         <p>{flowerId.couleur}</p>
         <p>{flowerId.prix}</p>
         <p>{flowerId.saisonFloraison}</p>
-        <img src={`/images/${flowerId.imageUne}`} alt={flowerId.name} />
-        <img src={`/images/${flowerId.imageDeux}`} alt={flowerId.name} />
+        <img src={`/images/${flowerId.imageUne}`} alt={flowerId.nom} />
+        <img src={`/images/${flowerId.imageDeux}`} alt={flowerId.nom} />
         <p>{flowerId.description}</p>
+        <Bouton label="Supprimer cette fleur" />
+        <Bouton label="Modifier cette fleur"  />
+
         </>
     )
 
