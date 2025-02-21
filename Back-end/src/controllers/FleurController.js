@@ -157,4 +157,43 @@ export const deleteFlower = async (req,res) => {
   } catch (error) {
       res.status(500).json({ message: "Erreur serveur", error });
   }
-}
+};
+
+export const searchFlowers = async (req, res) => {
+  try {
+    const { query } = req.query; // Récupérer le paramètre 'query' de la requête
+
+    if (!query) {
+      return res.status(400).json({
+        success: false,
+        message: "Veuillez tapez le nom d'une fleur",
+      });
+    }
+
+    // Filtrer les fleurs par le nom ou la description
+    const fleurs = await Fleur.find({
+      $or: [
+        { nom: { $regex: query, $options: "i" } }, // Recherche insensible à la casse par nom
+        { couleur: { $regex: query, $options: "i" } }, // Recherche insensible à la casse par description
+      ],
+    });
+
+    if (fleurs.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Aucune fleur trouvée",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: fleurs,
+      message: `Fleurs trouvées pour le terme de recherche : ${query}`,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

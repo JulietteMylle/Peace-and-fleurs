@@ -1,0 +1,104 @@
+/* Général */
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Légère teinte gris clair pour le fond */
+    color: #333; /* Texte gris foncé */
+  }
+  
+  .panier {
+    padding: 40px;
+    background-color: white; /* Fond blanc */
+    max-width: 900px;
+    margin: 0 auto; /* Centrer la page */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour délimiter la section */
+    border-radius: 8px; /* Coins arrondis */
+  }
+  
+  .h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Liste des articles du panier */
+  .cartItems {
+    margin-bottom: 30px;
+  }
+  
+  .cartItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0; /* Séparer les items par une ligne fine */
+    padding-bottom: 20px;
+  }
+  
+  .cartItem img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px; /* Coins arrondis sur l'image */
+    margin-right: 20px;
+  }
+  
+  .cartItem h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .cartItem p {
+    margin: 5px 0;
+    color: #666; /* Gris clair pour la description et le prix */
+  }
+  
+  .button {
+    background-color: #333; /* Fond noir */
+    color: white; /* Texte blanc */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .button:hover {
+    background-color: #555; /* Gris foncé au survol */
+  }
+  
+  /* Total du panier */
+  .cartSummary {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 20px;
+  }
+  
+  .cartSummary h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .cartSummary .button {
+    background-color: #ff6f61; /* Une couleur vive (rouge/saumon) pour le bouton "Passer à la caisse" */
+    margin-left: 10px;
+  }
+  
+  .cartSummary .button:hover {
+    background-color: #ff4e41; /* Légère variation au survol */
+  }
+  
+  /* Avertissement si le panier est vide */
+  .emptyCartMessage {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #666;
+  }
+  
