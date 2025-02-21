@@ -3,24 +3,25 @@ import Fleur from "../models/Fleur.js";
 // create - pour Satya
 export const addFlower = async (req, res) => {
   try {
-      const { nom, description, prix, couleur, saisonFloraison, image} = req.body;
+      const { type, description, prix, couleur, saisonFloraison, image} = req.body;
 
-      if (!nom || !description || !prix  || !couleur || !saisonFloraison || !image) {
+      if (!type || !description || !prix  || !couleur || !saisonFloraison || !image) {
           return res.status(400).json({ message: "Tous les champs doivent être complétés" });
       }
 
-      const newFlower = new Flower({
-          nom,
-          description,
-          prix,
-          couleur,
-          saisonFloraison,
-          image
+      const newFlower = new Fleur({
+          type : req.body.type,
+          description : req.body.description,
+          prix : req.body.prix,
+          couleur : req.body.couleur,
+          saisonFloraison : req.body.saisonFloraison,
+          image : req.body.image
       });
 
-      await newFlower.save();
+      const fleurAdd = await newFlower.save();
+      res.status(201).json(fleurAdd)
 
-      res.status(201).json({ message: "La fleur a été ajouté", flower: newFlower });
+      // res.status(201).json({ message: "La fleur a été ajouté", flower: newFlower });
   } catch (error) {
       res.status(500).json({ message: "Une erreur est survenue", error });
   }
