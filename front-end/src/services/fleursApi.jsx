@@ -1,7 +1,7 @@
 const fleursApi = {
 
     getFlowers : () => {
-        return fetch("LIEN ERS API")
+        return fetch("http://localhost:8080/")
         .then((response) => response.json())
     },
     getFlowerById : (id) => {
