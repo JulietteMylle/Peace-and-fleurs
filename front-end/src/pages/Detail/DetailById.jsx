@@ -40,6 +40,13 @@ const DetailById = () => {
       const handleHome = () => {
         navigate(`/`)
     };
+    const handleAjouterPanier =(FlowerId) => {
+        console.log("Données soumises :", flowerId);
+        fleursApi.updatePanier(FlowerId)
+        .catch((error) => console.error("Erreur", error));
+        
+
+    }
 
     return(
         <>
@@ -52,7 +59,7 @@ const DetailById = () => {
             <p className={styles.flowerDetails}>Couleur : {flowerId.couleur}</p>
             <p className={styles.flowerDetails}>Prix : {flowerId.prix}</p>
             <p className={styles.flowerDetails}>Saison de floraison : {flowerId.saisonFloraison}</p>
-            <Bouton  label="Ajouter au panier" />
+            <Bouton  label="Ajouter au panier" onClick={handleAjouterPanier}/>
         </div>
 
         <div className={styles.flowerImages}>
