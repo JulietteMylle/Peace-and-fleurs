@@ -7,7 +7,12 @@ import {
   updateAllFleurs,
   addFlower,
   deleteFlower,
+
+  searchFlowersowers,
+  searchFlowers;
+
   toggleProduitPanier,
+
 
 } from "../controllers/FleurController.js";
 
@@ -20,6 +25,7 @@ router.post('/flowers', addFlower);
 router.get("/", getAllUsers); // Obtenir toutes les fleurs
 router.get("/:id", getUserById); // Obtenir une fleur par ID
 router.get("/type/:type", getFleursByType); // Obtenir les fleurs par type
+router.get("/search", searchFlowers);
 
 // Routes Update
 router.put("/update/:id", majFleur); // Mettre à jour une fleur

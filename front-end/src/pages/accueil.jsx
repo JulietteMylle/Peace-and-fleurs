@@ -8,6 +8,8 @@ import styles from "./Accueil.module.css";
 const Accueil = () => {
   const navigate = useNavigate();
   const [flowers, setFlowers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(""); 
+
 
   // Récupérer toutes les fleurs au chargement de la page
   useEffect(() => {
@@ -23,15 +25,45 @@ const Accueil = () => {
     navigate(`/${flowerId}`);
   };
 
+
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      fleurApi.getFlowers().then((data) => setFlowers(data)); // Charger toutes les fleurs si la recherche est vide
+    } else {
+      fleurApi.searchFlowers(searchQuery) // Appeler la nouvelle route de recherche
+        .then((data) => setFlowers(data))
+        .catch((error) => console.error("Erreur de recherche :", error));
+    }
+  }, [searchQuery]);
+
+  // Filtrage des fleurs selon la recherche
+  const filteredFlowers = flowers.filter(flower =>
+    flower.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
   return (
     <div className={styles.homepage}>
       <Header />
       <h1>Bienvenue dans notre boutique de fleurs</h1>
+
       <div className={styles.flowerList}>
-        {flowers.length === 0 ? (
+      {/* Barre de recherche */}
+      <div className={styles.searchContainer}>
+        <input
+          type="text"
+          placeholder="Rechercher une fleur..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)} // Met à jour la recherche
+          className="search-input"
+        />
+      </div>
+      <div className={styles.flowerList}>
+        {filteredFlowers.length === 0 ? (
           <p>Chargement des fleurs...</p>
         ) : (
-          flowers.map((flower) => (
+          filteredFlowers.map((flower) => (
+
             <div key={flower._id} className={styles.flowerCard}>
               <img className={styles.imagePrincipale} src={`/images/${flower.image}`} alt={flower.nom} />
               <h3>{flower.nom}</h3>
@@ -42,9 +74,11 @@ const Accueil = () => {
           ))
         )}
       </div>
+      </div>
       <Footer />
     </div>
   );
 };
 
 export default Accueil;
+
