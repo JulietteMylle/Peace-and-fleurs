@@ -15,17 +15,24 @@ const fleursApi = {
 
 
 
-
-
-    // addFlower: (flower) => {
-    //     return fetch('http://localhost:8080/', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type' : 'application/json'
-    //         },
-    //         body: JSON.stringify(flower)
-    //     }).then((response) => response.json())
-    // },
+    addFlower: (flower) => {
+        return fetch('http://localhost:8080/flowers', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(flower)
+        }).then((response) => response.json())
+    },
+    updateFlower: (id, flower) => {
+        return fetch(`http://localhost:8080/update/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(flower),
+        }).then((response) => response.json());
+      }
 
     // deleteFlower: (flower) => {
     //     return fetch('LIEN API', {
