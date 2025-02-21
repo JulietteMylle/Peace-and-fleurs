@@ -37,6 +37,10 @@ const fleurSchema = new mongoose.Schema(
     },imageDeux: {
       type: String,
     },
+    isInPanier: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

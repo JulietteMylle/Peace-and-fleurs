@@ -157,6 +157,7 @@ export const deleteFlower = async (req,res) => {
   } catch (error) {
       res.status(500).json({ message: "Erreur serveur", error });
   }
+
 };
 
 export const searchFlowers = async (req, res) => {
@@ -197,3 +198,39 @@ export const searchFlowers = async (req, res) => {
     });
   }
 };
+
+}
+
+
+
+export const toggleProduitPanier = async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Vérifie si l'ID est valide
+    // if (!mongoose.Types.ObjectId.isValid(id)) {
+    //   return res.status(400).json({ error: "ID invalide" });
+    // }
+
+    // Recherche la fleur avec l'ID donné
+    const fleur = await Fleur.findByIdAndUpdate(id, {
+      nom : req.body.nom,
+     type:req.body.type,
+    image: req.body.image,
+    couleur: req.body.couleur,
+    prix: req.body.prix,
+    saisonFloraison: req.body.saisonFloraison,
+    imageUne: req.body.imageUne,
+    imageDeux: req.body.imageDeux,
+    description: req.body.description,
+    isInPanier: req.body.isInPanier
+   }, {new : true});
+    if (!fleur) {
+      return res.status(404).json({ error: "Produit non trouvé" });
+    }
+    // Retourner la fleur mise à jour
+    res.json(fleur);
+  } catch (err) {
+    res.status(500).json({ error: "Erreur serveur lors de la mise à jour du produit" });
+  }
+};
+

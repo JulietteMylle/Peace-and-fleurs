@@ -7,10 +7,15 @@ import {
   updateAllFleurs,
   addFlower,
   deleteFlower,
+
   searchFlowersowers,
   searchFlowers;
 
+  toggleProduitPanier,
+
+
 } from "../controllers/FleurController.js";
+
 
 const router = express.Router();
 
@@ -26,6 +31,10 @@ router.get("/search", searchFlowers);
 router.put("/update/:id", majFleur); // Mettre à jour une fleur
 router.put("/all", updateAllFleurs); // Mettre à jour toutes les fleurs
 router.delete('/delete/:id', deleteFlower) 
+router.put('/cart/:id', toggleProduitPanier)
+// router.get('/cart', getProduitsPanier)
+
+
 
 //Routes delete pour Satya
 

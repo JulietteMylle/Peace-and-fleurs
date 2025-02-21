@@ -43,7 +43,17 @@ const fleursApi = {
         }).catch((error) => {
             console.error('Erreur lors de la suppression :', error);
         })
-    }
+    },
+    updatePanier: (id, flower) => {
+        return fetch(`http://localhost:8080/cart/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(flower),
+        }).then((response) => response.json());
+      },
+
 }
 
 
