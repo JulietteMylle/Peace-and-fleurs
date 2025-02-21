@@ -1,8 +1,9 @@
 import express from "express";
-import { addFlower } from "../controller/addToBDDController";
+import { addFlower, deleteFlower } from "../controller/addToBDDController.js";
 
 const router = express.Router();
 
-router.post("/flowers/add", addFlower);
+router.post('/flowers', addFlower);
+router.delete('/flower/:id', deleteFlower) 
 
 export default router;

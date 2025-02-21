@@ -1,5 +1,11 @@
-import { Fleur } from "../modeles/fleur";
+import { Fleur } from "../modeles/fleur.js";
 
+/**
+ * middlewarepour ajouter une fleur
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 export const addFlower = async (req, res) => {
     try {
         const { nom, description, prix, couleur, saisonFloraison, image} = req.body;
@@ -23,4 +29,19 @@ export const addFlower = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Une erreur est survenue", error });
     }
-};
+}
+
+export const deleteFlower = async (req,res) => {
+    try{
+        const fleurSupp = await Fleur.findByIdAndDelete(req.params.id)
+
+        if(!fleurSupp){
+            return res.status(404).json({message: "Fleur non trouvée"})
+        }
+        res.status(204).end()
+
+        res.status(200).json({ message: "Fleur supprimée avec succès" });
+    } catch (error) {
+        res.status(500).json({ message: "Erreur serveur", error });
+    }
+}
