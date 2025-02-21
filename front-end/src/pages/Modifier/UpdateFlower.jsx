@@ -3,9 +3,9 @@ import fleursApi from "../../services/fleursApi";
 import * as yup from "yup";
 import { useNavigate, useParams } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
-import styles from "../Ajouter/Ajouter.module.css"; // Importation du module CSS
-import { useCallback, useEffect } from "react"; // Import de useCallback
-// Définition du schéma de validation
+import styles from "../Ajouter/Ajouter.module.css"; 
+import { useCallback, useEffect } from "react";
+
 const schema = yup
   .object({
     nom: yup.string().required("Le nom est obligatoire"),
@@ -19,7 +19,7 @@ const schema = yup
   .required();
 
 const UpdateFlower = () => {
-  const { id } = useParams(); // Récupère l'ID de la fleur à partir de l'URL
+  const { id } = useParams();
   const {
     register,
     handleSubmit,
@@ -29,22 +29,20 @@ const UpdateFlower = () => {
 
   const navigate = useNavigate();
 
-  // Fonction qui gère la soumission du formulaire
   const onSubmit = (data) => {
     console.log("Données soumises pour mise à jour", data);
     fleursApi
-      .updateFlower(id, data) // Passer l'id pour la mise à jour
+      .updateFlower(id, data) 
       .then(() => navigate("/"))
       .catch((error) => console.error("Erreur", error));
   };
 
-  // Fonction pour pré-remplir le formulaire avec les données de la fleur
-// Fonction pour pré-remplir le formulaire avec les données de la fleur
+
 const fetchFlower = useCallback(async () => {
     try {
       const response = await fleursApi.getFlowerById(id);
       const flower = response.data;
-      // Remplir le formulaire avec les données de la fleur existante
+
       setValue("nom", flower.nom);
       setValue("type", flower.type);
       setValue("image", flower.image);
@@ -57,11 +55,11 @@ const fetchFlower = useCallback(async () => {
     } catch (error) {
       console.error("Erreur lors de la récupération de la fleur", error);
     }
-  }, [id, setValue]); // Ajoute id et setValue comme dépendances, puisque ce sont des variables externes qui peuvent changer
+  }, [id, setValue]); 
   
   useEffect(() => {
     fetchFlower();
-  }, [fetchFlower]); // Ici, fetchFlower ne changera que si ses dépendances changent
+  }, [fetchFlower]); 
 
   return (
     <div className={styles.formContainer}>
