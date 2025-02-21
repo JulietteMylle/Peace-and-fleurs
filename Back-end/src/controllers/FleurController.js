@@ -152,7 +152,6 @@ export const deleteFlower = async (req,res) => {
       if(!fleurSupp){
           return res.status(404).json({message: "Fleur non trouvée"})
       }
-      res.status(204).end()
 
       res.status(200).json({ message: "Fleur supprimée avec succès" });
   } catch (error) {

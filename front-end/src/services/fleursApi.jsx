@@ -32,18 +32,18 @@ const fleursApi = {
           },
           body: JSON.stringify(flower),
         }).then((response) => response.json());
-      }
+      },
 
-    // deleteFlower: (flower) => {
-    //     return fetch('LIEN API', {
-    //         method: 'DELETE',
-    //         headers: { 'Content-Type' : 'application/json'}
-    //     }).then(() => {
-    //         console.log(`Fleur ${flower} supprimée`)
-    //     }).catch((error) => {
-    //         console.error('Erreur lors de la suppression :', error);
-    //     })
-    // }
+    deleteFlower: (id, ) => {
+        return fetch(`http://localhost:8080/delete/${id}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type' : 'application/json'}
+        }).then(() => {
+            console.log(`Fleur ${id} supprimée`)
+        }).catch((error) => {
+            console.error('Erreur lors de la suppression :', error);
+        })
+    }
 }
 
 

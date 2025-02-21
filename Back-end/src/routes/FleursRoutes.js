@@ -5,7 +5,8 @@ import {
   majFleur,
   getFleursByType,
   updateAllFleurs,
-  addFlower
+  addFlower,
+  deleteFlower
 } from "../controllers/FleurController.js";
 
 const router = express.Router();
@@ -20,6 +21,7 @@ router.get("/type/:type", getFleursByType); // Obtenir les fleurs par type
 // Routes Update
 router.put("/update/:id", majFleur); // Mettre à jour une fleur
 router.put("/all", updateAllFleurs); // Mettre à jour toutes les fleurs
+router.delete('/delete/:id', deleteFlower) 
 
 //Routes delete pour Satya
 

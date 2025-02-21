@@ -32,6 +32,11 @@ const fleurSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    imageUne: {
+      type: String,
+    },imageDeux: {
+      type: String,
+    },
   },
   {
     timestamps: true,
@@ -80,7 +85,16 @@ const fleurValidation = Joi.object({
     .messages({
       "string.empty": "L'image principale est obligatoire",
     }),
-
+    imageUne: Joi.string()
+    .required()
+    .messages({
+      "string.empty": "L'image principale est obligatoire",
+    }),
+    imageDeux: Joi.string()
+    .required()
+    .messages({
+      "string.empty": "L'image principale est obligatoire",
+    }),
 
 
   description: Joi.string()

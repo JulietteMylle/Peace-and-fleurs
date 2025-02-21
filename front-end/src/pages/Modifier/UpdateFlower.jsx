@@ -111,7 +111,7 @@ const fetchFlower = useCallback(async () => {
 
         {/* Image une */}
         <div className={styles.formGroup}>
-          <label htmlFor="imageUne">Image principale</label>
+          <label htmlFor="imageUne">Image Une</label>
           <input id="imageUne" className={styles.formInput} {...register("imageUne")} />
           {errors.imageUne && <p className={styles.errorMessage}>{errors.imageUne.message}</p>}
         </div>

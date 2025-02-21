@@ -17,13 +17,13 @@
   }
   
   /* Conteneur des boutons */
-  .header .button-container {
+  .header .buttonContainer {
     display: flex;
     gap: 15px;
   }
   
   /* Style des boutons */
-  .header .button-container button {
+  .header .buttonContainer button {
     padding: 10px 15px;
     background-color: #fff;
     color: black;
@@ -33,7 +33,7 @@
     font-weight: bold;
   }
   
-  .header .button-container button:hover {
+  .header .buttonContainer button:hover {
     background-color: #000;
     color:#fff;
     border-color: #fff;

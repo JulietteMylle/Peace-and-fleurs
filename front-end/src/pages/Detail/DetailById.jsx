@@ -29,13 +29,24 @@ const DetailById = () => {
     const handleEditClick = () => {
         navigate(`/update/${id}`)
     };
-
+    const handleDelete = () => {
+        fleursApi.deleteFlower(id)
+          .then(() => {
+            console.log(`Fleur ${id} supprimée`);
+            navigate("/");
+          })
+          .catch(error => console.error("Erreur lors de la suppression :", error));
+      };
+      const handleHome = () => {
+        navigate(`/`)
+    };
 
     return(
         <>
         <Header />
         <h1 className={styles.titre}>{flowerId.nom}</h1>
         <p className={styles.sousTitre}>{flowerId.type}</p>
+        <Bouton  label="Retourner à l'accueil" onClick={handleHome} />
         <img className={styles.imagePrincipale} src={`/images/${flowerId.image}`} alt={flowerId.nom} />
         <div >
             <p className={styles.flowerDetails}>Couleur : {flowerId.couleur}</p>
@@ -49,8 +60,8 @@ const DetailById = () => {
             <img src={`/images/${flowerId.imageDeux}`} alt={flowerId.nom} />
         </div>
         <p className={styles.flowerDescription}>{flowerId.description}</p>
-        <div className={styles.boutonsContainer}>s
-             <Bouton  label="Supprimer cette fleur" />
+        <div className={styles.boutonsContainer}>
+             <Bouton  label="Supprimer cette fleur" onClick={handleDelete}/>
              <Bouton  label="Modifier cette fleur" onClick={handleEditClick} />
         </div>
         <Footer />

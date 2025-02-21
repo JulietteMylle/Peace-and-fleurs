@@ -1,22 +1,22 @@
 import styles from "./Footer.module.css";
-import React from 'react';
+
 
 const Footer =() => {
     return (
 
-        <footer className="footer">
-            <div className="footer-left">
-                <p className="brand-name">Ma Boutique de Fleurs</p>
+        <footer className={styles.footer}>
+            <div className={styles.footerLeft}>
+                <p className={styles.brandName}>Ma Boutique de Fleurs</p>
             </div>
-            <div className="footer-right">
+            <div className={styles.footerRight}>
                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-facebook-f"></i>
+                    <i className={styles.faFacebookF}></i>
                 </a>
                 <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-instagram"></i>
+                    <i className={styles.faInstagram}></i>
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-twitter"></i>
+                    <i className={styles.faTwitter}></i>
                 </a>
             </div>
             <p>Product by Juliette Mylle, Hedi Mathlouthi, Satya Minguez et Lea Druffin</p>

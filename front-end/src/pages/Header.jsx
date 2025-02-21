@@ -1,26 +1,31 @@
-import "./Header.module.css";
-import React from 'react';
-import {Link } from 'react-router-dom';
+import styles from "./Header.module.css";
+
+import { useNavigate } from 'react-router-dom';
+import Bouton from "../components/Bouton/Boutons";
 
 
 const Header = () => {
+  const navigate = useNavigate();
+  const handleAddFlower = () => {
+    navigate(`/flowers`)
+};
+
+const handleCart = () => {
+  navigate(`/cart`)
+};
     
     return ( 
     <> 
-    <header className="header">
-      <div className="logo">
+    <header className={styles.header}>
+      <div className={styles.logo}>
         <h1>Ma Boutique de Fleurs</h1>
       </div>
-      <div className="button-container">
-        {/* Bouton Panier */}
-        <button>Panier</button>
+      <div className={styles.buttonContainer}>
+      <Bouton  label="Panier" onClick={handleCart} />
 
-        {/* Bouton Ajout Fleur */}
-        <Link to="/ajouter-fleur">
-          <button>Ajouter une Fleur</button>
-        </Link>
+      <Bouton  label="Ajouter une fleur" onClick={handleAddFlower} />
       </div>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
     </header>
     </>
      

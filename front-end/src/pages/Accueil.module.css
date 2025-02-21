@@ -3,28 +3,28 @@
     padding: 20px;
   }
   
-  .flower-list {
+  .flowerList {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
   }
   
-  .flower-card {
+  .flowerCard {
     border: 1px solid #ddd;
     padding: 10px;
     width: 200px;
     text-align: center;
   }
   
-  .flower-card img {
+  .flowerCard img {
     width: 100%;
     height: auto;
   }
   
   button {
     padding: 10px;
-    background-color: #28a745;
+
     color: white;
     border: none;
     cursor: pointer;
