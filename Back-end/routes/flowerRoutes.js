@@ -1,5 +1,5 @@
 import express from "express";
-import { addFlower, deleteFlower } from "../controller/addToBDDController.js";
+import { addFlower, deleteFlower } from "../controller/flowerController.js";
 
 const router = express.Router();
 
