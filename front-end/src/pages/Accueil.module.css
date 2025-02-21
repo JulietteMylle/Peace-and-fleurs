@@ -33,3 +33,23 @@
   button:hover {
     background-color: #218838;
   }
+
+  .searchContainer {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .searchInput {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .searchInput:focus {
+    border-color: #333;
+  }

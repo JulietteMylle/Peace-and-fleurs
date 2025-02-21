@@ -6,12 +6,10 @@ import {
   getFleursByType,
   updateAllFleurs,
   addFlower,
-<<<<<<< Updated upstream
-  deleteFlower
-=======
+  deleteFlower,
   searchFlowersowers,
-  searchFlowers,
->>>>>>> Stashed changes
+  searchFlowers;
+
 } from "../controllers/FleurController.js";
 
 const router = express.Router();
