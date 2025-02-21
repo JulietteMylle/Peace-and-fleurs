@@ -5,11 +5,15 @@ import {
   updateUser,
   getFleursByType,
   updateAllFleurs,
-} from "../controllers/FleurController.js";
+  addFlower,
+  deleteFlower
+} 
+from "../controllers/FleurController.js";
 
 const router = express.Router();
 
 // Routes create pour Satya
+router.post('/flowers', addFlower);
 
 // Routes Read
 router.get("/", getAllUsers); // Obtenir toutes les fleurs
@@ -21,5 +25,6 @@ router.put("/:id", updateUser); // Mettre à jour une fleur
 router.put("/all", updateAllFleurs); // Mettre à jour toutes les fleurs
 
 //Routes delete pour Satya
+router.delete('/:id', deleteFlower) 
 
 export default router;

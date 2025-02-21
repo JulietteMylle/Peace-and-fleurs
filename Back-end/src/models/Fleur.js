@@ -20,6 +20,7 @@ const fleurSchema = new mongoose.Schema(
     },
     saisonFloraison: {
       type: String,
+      enum: ["Printemps", "Été", "Automne", "Hiver"],
       required: true,
     },
     image: {
