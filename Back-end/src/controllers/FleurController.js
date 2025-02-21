@@ -4,19 +4,9 @@ import Fleur from "../models/Fleur.js";
 
 // Read - Obtenir toutes les fleurs
 export const getAllUsers = async (req, res) => {
-  try {
+
     const fleurs = await Fleur.find();
-    res.status(200).json({
-      success: true,
-      data: fleurs,
-      message: "Liste des fleurs récupérée avec succès",
-    });
-  } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: error.message,
-    });
-  }
+    res.status(200).send(fleurs);
 };
 
 // Read - Pour Obtenir une fleur par son ID

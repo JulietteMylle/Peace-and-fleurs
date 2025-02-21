@@ -1,15 +1,16 @@
 const fleursApi = {
 
     getFlowers : () => {
-        return fetch("LIEN ERS API")
+        return fetch("http://localhost:8080/")
         .then((response) => response.json())
     },
     getFlowerById : (id) => {
-        return fetch(LIEN VERS API)
+        return fetch(`http://localhost:8080/${id}`)
+
         .then((response) => response.json())
     },
     addFlower: (flower) => {
-        return fetch('LIEN VERS API', {
+        return fetch('http://localhost:8080/', {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json'
