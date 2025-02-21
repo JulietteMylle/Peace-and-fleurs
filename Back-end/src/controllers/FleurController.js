@@ -3,14 +3,15 @@ import { Fleur, fleurValidation } from "../models/Fleur.js";
 // create - pour Satya
 export const addFlower = async (req, res) => {
   try {
-      const { type, description, prix, couleur, saisonFloraison, image} = req.body;
+      const { type, nom, description, prix, couleur, saisonFloraison, image} = req.body;
 
-      if (!type || !description || !prix  || !couleur || !saisonFloraison || !image) {
+      if (!type || !nom || !description || !prix  || !couleur || !saisonFloraison || !image) {
           return res.status(400).json({ message: "Tous les champs doivent être complétés" });
       }
 
       const newFlower = new Fleur({
           type : req.body.type,
+          nom : req.body.nom,
           description : req.body.description,
           prix : req.body.prix,
           couleur : req.body.couleur,
@@ -151,7 +152,6 @@ export const deleteFlower = async (req,res) => {
       if(!fleurSupp){
           return res.status(404).json({message: "Fleur non trouvée"})
       }
-      res.status(204).end()
 
       res.status(200).json({ message: "Fleur supprimée avec succès" });
   } catch (error) {
