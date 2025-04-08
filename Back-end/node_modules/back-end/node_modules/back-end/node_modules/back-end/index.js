@@ -10,7 +10,7 @@ dotenv.config();
 
 // On Initialise l'application Express
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.use(cors());
 // Middleware pour parser le JSON
 app.use(express.json());
